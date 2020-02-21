@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558  "command": "msbuild",
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "make clean && make -j4",
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-j4"
+            ],
+            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": [] ,          
+            "group": {
+                "kind":"build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "download",
+            "type": "shell",
+            "command": "make update",
+            "problemMatcher": []
+        },
+        {
+            "label": "build & download",
+            "type": "shell",
+            "command": "make &&make update",
+            "problemMatcher": []
+        },
+
+    ]
+}

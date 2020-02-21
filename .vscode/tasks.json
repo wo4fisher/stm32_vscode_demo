@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run openocd",
+            "type": "shell",
+            "command": "openocd -f C:/Users/adminFish/AppData/Local/Programs/OpenOCD.0100/share/openocd/scripts/interface/stlink.cfg -f C:/Users/adminFish/AppData/Local/Programs/OpenOCD.0100/share/openocd/scripts/target/stm32f1x.cfg",
+            "problemMatcher": []
+        },       
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "make clean ; make -j4",
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-j4"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "download",
+            "type": "shell",
+            "command": "STM32_Programmer_CLI",
+            "args": [
+                "-c port=SWD -d E:/wo4fisher/Documents/keil_proj__stm32/GCC_VSCODE_TEST/build/GCC_VSCODE_TEST.hex -v -s 0x08000000"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "build & download",
+            "type": "shell",
+            "command": "make -j4 ;make update",
+            "problemMatcher": []
+        }
+    ]
+}

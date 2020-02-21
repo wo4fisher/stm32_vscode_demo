@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "tos.h": "c",
+        "cmsis_os.h": "c"
+    }
+}

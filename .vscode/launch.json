@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "ARM Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "miDebuggerPath": "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\8 2019-q3-update\\bin\\arm-none-eabi-gdb.exe",
+            "targetArchitecture": "arm",
+            "program": "${workspaceRoot}\\build\\GCC_VSCODE_TEST.elf",
+            "setupCommands": [
+                {
+                    "text": "file 'E:/wo4fisher/Documents/keil_proj__stm32/GCC_VSCODE_TEST/build/GCC_VSCODE_TEST.elf'"
+                },
+                {
+                    "text": "target remote localhost:3333"
+                },
+                {
+                    "text": "monitor reset"
+                },
+                {
+                    "text": "monitor halt"
+                },
+                {
+                    "text": "load"
+                }
+            ],
+            "preLaunchTask": "build",
+            "launchCompleteCommand": "None",
+            "externalConsole": true,
+            "cwd": "${workspaceRoot}"
+        }
+    ]
+}

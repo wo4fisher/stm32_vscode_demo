@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"gcc_vscode_test\startup_stm32f103xb.o"
+"gcc_vscode_test\main.o"
+"gcc_vscode_test\gpio.o"
+"gcc_vscode_test\usart.o"
+"gcc_vscode_test\stm32f1xx_it.o"
+"gcc_vscode_test\stm32f1xx_hal_msp.o"
+"gcc_vscode_test\stm32f1xx_hal_gpio_ex.o"
+"gcc_vscode_test\stm32f1xx_hal_tim.o"
+"gcc_vscode_test\stm32f1xx_hal_tim_ex.o"
+"gcc_vscode_test\stm32f1xx_hal_uart.o"
+"gcc_vscode_test\stm32f1xx_hal.o"
+"gcc_vscode_test\stm32f1xx_hal_rcc.o"
+"gcc_vscode_test\stm32f1xx_hal_rcc_ex.o"
+"gcc_vscode_test\stm32f1xx_hal_gpio.o"
+"gcc_vscode_test\stm32f1xx_hal_dma.o"
+"gcc_vscode_test\stm32f1xx_hal_cortex.o"
+"gcc_vscode_test\stm32f1xx_hal_pwr.o"
+"gcc_vscode_test\stm32f1xx_hal_flash.o"
+"gcc_vscode_test\stm32f1xx_hal_flash_ex.o"
+"gcc_vscode_test\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "GCC_VSCODE_TEST\GCC_VSCODE_TEST.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "GCC_VSCODE_TEST.map" -o GCC_VSCODE_TEST\GCC_VSCODE_TEST.axf
